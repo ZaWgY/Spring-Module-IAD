@@ -24,8 +24,10 @@ public class PointServiceImpl implements PointService {
         return points;
     }
 
+
+
     @Override
-    public List<Point> getByUserId(Long userId) {
+    public List<Point> getByUserId(String userId) {
         List<Point> points = new ArrayList<>();
         pointRepository.findAll().forEach(points::add);
         List<Point> necessaryPoints = new ArrayList<>();
@@ -43,12 +45,25 @@ public class PointServiceImpl implements PointService {
     }
 
     @Override
+    public void clearAll() {
+        pointRepository.deleteAll();
+    }
+
+    @Override
     public Point saveOrUpdate(Point point) {
         return null;
     }
 
     @Override
-    public void delete(Long userId) {
+    public void delete(String name) {
+        List<Point> points = new ArrayList<>();
+        pointRepository.findAll().forEach(points::add);
+        for (Point point: points) {
+            if(point.getUserId().equals(name)){
+                pointRepository.delete(point);
+            }
+        }
+
 
     }
 

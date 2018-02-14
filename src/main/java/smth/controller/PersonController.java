@@ -30,7 +30,7 @@ public class PersonController {
     public ResponseEntity addPerson(@RequestBody Person input){
         System.out.println("Проверка" + input);
         if (personService.checkAvailible(input.getNameous())){
-        personService.save(new Person(input.getNameous(),input.getPasswordious()));
+        personService.save(new Person(input.getNameous(),input.getHashMD5(input.getPasswordious())));
         }else{
             System.out.println("ВСЕ РАБОТАЕТ ЕБЫТА!");
             return ResponseEntity.ok(HttpStatus.CONFLICT);
@@ -41,12 +41,12 @@ public class PersonController {
     @RequestMapping(value = "/clearPerson", method = RequestMethod.GET)
     public void clearPerson(){
         personService.clear();
-        personService.save(new Person("Proverka","Zvuka"));
+        personService.save(new Person("Proverka",new Person().getHashMD5("Zvuka")));
     }
 
     @RequestMapping(value = "/addExamplePerson", method = RequestMethod.GET)
     public void addTrying(){
-        personService.save(new Person("Proverka","Zvuka"));
+        personService.save(new Person("Proverka",new Person().getHashMD5("Zvuka")));
     }
 
     @RequestMapping(value = "/checkPassword",method = RequestMethod.POST)

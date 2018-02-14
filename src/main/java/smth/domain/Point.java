@@ -13,7 +13,7 @@ public class Point {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long _id;
 
-    public Point(Float x, Float y, Float r, Boolean hit, Long userId) {
+    public Point(Float x, Float y, Float r, Boolean hit, String userId) {
         this.x = x;
         this.y = y;
         this.r = r;
@@ -23,7 +23,7 @@ public class Point {
 
     public Point(){}
 
-    public Point(Long _id,Float x, Float y, Float r, Boolean hit, Long userId) {
+    public Point(Long _id,Float x, Float y, Float r, Boolean hit, String userId) {
         this._id = _id;
         this.x = x;
         this.y = y;
@@ -36,7 +36,7 @@ public class Point {
     private Float y;
     private Float r;
     private Boolean hit;
-    private Long userId;
+    private String userId;
 
     public Long getId() {
         return _id;
@@ -78,13 +78,24 @@ public class Point {
         this.hit = hit;
     }
 
-    public Long getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
-
+    public boolean checkHit() {
+        if (r > 0) {
+            return ((x <= 0) && (y <= 0) && (x >= -r) && (y >= -(r / 2)))
+                    || ((x <= 0) && (y >= 0)) && (2 * y - x <= r)
+                    || ((x >= 0) && (y >= 0) && (r * r >= y * y + x * x));
+        } else {
+            float r_ = - r;
+            return ((x >= 0) && (y >= 0) && (x <= r_) && (y <= (r_ / 2)))
+                    || ((x >= 0) && (y <= 0)) && (2 * y - x >= - r_)
+                    || ((x <= 0) && (y <= 0) && (r_ * r_ >= y * y + x * x));
+        }
+    }
 }

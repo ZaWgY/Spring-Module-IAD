@@ -8,11 +8,13 @@ import java.util.List;
 public interface PointService {
     List<Point> listAll();
 
-    List<Point> getByUserId(Long userId);
+    List<Point> getByUserId(String userId);
 
     Point saveOrUpdate(Point point);
 
-    void delete(Long userId);
+    void delete(String name);
 
     void save(Point point);
+
+    void clearAll();
 }

@@ -9,8 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2018-01-27.21:06:55.519</IntrospectionTimestamp>
-      <IntrospectionStateNumber>2081</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-02-11.18:41:07.913</IntrospectionTimestamp>
+      <IntrospectionStateNumber>2147</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -30,60 +30,60 @@
       <ObjectId>12113</ObjectId>
     </schema>
     <sequence id="9" parent="3" name="person_id__seq">
-      <ObjectId>25028</ObjectId>
-      <StateNumber>2080</StateNumber>
+      <ObjectId>25078</ObjectId>
+      <StateNumber>2146</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <sequence id="10" parent="3" name="point__id_seq">
-      <ObjectId>25039</ObjectId>
-      <StateNumber>2081</StateNumber>
+      <ObjectId>25089</ObjectId>
+      <StateNumber>2147</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <sequence id="11" parent="3" name="user__id_seq">
-      <ObjectId>25017</ObjectId>
-      <StateNumber>2079</StateNumber>
+      <ObjectId>25047</ObjectId>
+      <StateNumber>2085</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <table id="12" parent="3" name="person">
-      <ObjectId>25030</ObjectId>
-      <StateNumber>2080</StateNumber>
+      <ObjectId>25080</ObjectId>
+      <StateNumber>2146</StateNumber>
     </table>
     <table id="13" parent="3" name="point">
-      <ObjectId>25041</ObjectId>
-      <StateNumber>2081</StateNumber>
+      <ObjectId>25091</ObjectId>
+      <StateNumber>2147</StateNumber>
     </table>
     <table id="14" parent="3" name="user">
-      <ObjectId>25019</ObjectId>
-      <StateNumber>2079</StateNumber>
+      <ObjectId>25049</ObjectId>
+      <StateNumber>2085</StateNumber>
     </table>
     <column id="15" parent="12" name="id_">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>2080</StateNumber>
+      <StateNumber>2146</StateNumber>
       <SequenceName>person_id__seq</SequenceName>
       <DefaultExpression>nextval(&apos;person_id__seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="16" parent="12" name="nameous">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
-      <StateNumber>2080</StateNumber>
+      <StateNumber>2146</StateNumber>
     </column>
     <column id="17" parent="12" name="passwordious">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
-      <StateNumber>2080</StateNumber>
+      <StateNumber>2146</StateNumber>
     </column>
     <index id="18" parent="12" name="person_pkey">
-      <ObjectId>25037</ObjectId>
+      <ObjectId>25087</ObjectId>
       <ColNames>id_</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="19" parent="12" name="person_pkey">
-      <ObjectId>25038</ObjectId>
+      <ObjectId>25088</ObjectId>
       <ColNames>id_</ColNames>
       <UnderlyingIndexName>person_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
@@ -92,42 +92,42 @@
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>2081</StateNumber>
+      <StateNumber>2147</StateNumber>
       <SequenceName>point__id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;point__id_seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="21" parent="13" name="hit">
       <Position>2</Position>
       <DataType>boolean|0</DataType>
-      <StateNumber>2081</StateNumber>
+      <StateNumber>2147</StateNumber>
     </column>
     <column id="22" parent="13" name="r">
       <Position>3</Position>
       <DataType>real|0</DataType>
-      <StateNumber>2081</StateNumber>
+      <StateNumber>2147</StateNumber>
     </column>
     <column id="23" parent="13" name="user_id">
       <Position>4</Position>
-      <DataType>bigint|0</DataType>
-      <StateNumber>2081</StateNumber>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>2147</StateNumber>
     </column>
     <column id="24" parent="13" name="x">
       <Position>5</Position>
       <DataType>real|0</DataType>
-      <StateNumber>2081</StateNumber>
+      <StateNumber>2147</StateNumber>
     </column>
     <column id="25" parent="13" name="y">
       <Position>6</Position>
       <DataType>real|0</DataType>
-      <StateNumber>2081</StateNumber>
+      <StateNumber>2147</StateNumber>
     </column>
     <index id="26" parent="13" name="point_pkey">
-      <ObjectId>25045</ObjectId>
+      <ObjectId>25095</ObjectId>
       <ColNames>_id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="27" parent="13" name="point_pkey">
-      <ObjectId>25046</ObjectId>
+      <ObjectId>25096</ObjectId>
       <ColNames>_id</ColNames>
       <UnderlyingIndexName>point_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
@@ -136,27 +136,27 @@
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>2079</StateNumber>
+      <StateNumber>2085</StateNumber>
       <SequenceName>user__id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;user__id_seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="29" parent="14" name="u_name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
-      <StateNumber>2079</StateNumber>
+      <StateNumber>2085</StateNumber>
     </column>
     <column id="30" parent="14" name="u_password">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
-      <StateNumber>2079</StateNumber>
+      <StateNumber>2085</StateNumber>
     </column>
     <index id="31" parent="14" name="user_pkey">
-      <ObjectId>25026</ObjectId>
+      <ObjectId>25056</ObjectId>
       <ColNames>_id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="32" parent="14" name="user_pkey">
-      <ObjectId>25027</ObjectId>
+      <ObjectId>25057</ObjectId>
       <ColNames>_id</ColNames>
       <UnderlyingIndexName>user_pkey</UnderlyingIndexName>
       <Primary>1</Primary>

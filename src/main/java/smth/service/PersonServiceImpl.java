@@ -53,7 +53,7 @@ public class PersonServiceImpl implements PersonService{
         for (Person p :list) {
             if (p.getNameous().equals(person.getNameous())){
                 returnValue = 1;
-                if(p.getPasswordious().equals(person.getPasswordious())){
+                if(p.getPasswordious().equals(person.getHashMD5(person.getPasswordious()))){
                     returnValue = 2;
                 }
             }
